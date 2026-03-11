@@ -4,8 +4,7 @@ const model = {
         users: [{ // users = name
                 id: 0,
                 userID: "Ove",
-                IteminCart: [],
-                AddedItemID: 1,
+                item: [],                
 
             },
             {
@@ -33,4 +32,4 @@ const model = {
         }
 
     }
-};
+};+
