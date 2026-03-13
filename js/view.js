@@ -1,9 +1,11 @@
+
+
 function updateView(){
     let Users = "";
-    let Cart = "";
+    let Cart = "";   
 
-    // løkke user data users
-
+    // løkke user data users  
+ 
 
     // løkke for data cart
 }
