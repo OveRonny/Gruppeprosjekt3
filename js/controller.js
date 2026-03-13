@@ -1,47 +1,30 @@
-// legg til
-// fjern
-// valgt item
-// velg id
-// 
-// skrive i input/update
+function addItem() {
 
-function selectItem(id) {
-    model.viewState.selectedItemId = id;
+    let text = model.viewState.inputText.trim();
+
+    if (text === "") return;
+
+    model.data.items.push({
+        id: Date.now(),
+        name: text
+    });
+
+    model.viewState.inputText = "";
+
     updateView();
+    document.getElementById("itemInput").focus();
 }
 
-function addToList() {
-    if (model.viewState.itemName.trim() === "") return;
+function removeItem(id) {
 
-    let itemNumber = Number(model.viewState.itemNumber);
-    if (isNaN(itemNumber) || itemNumber <= 0) return;
+    for (let i = 0; i < model.data.items.length; i++) {
 
-    let newItem = {
-        id: model.viewState.nextItemId,
-        text: model.viewState.itemName.trim(),
-        number: itemNumber,
-    };
-
-    model.data.shoppingList.push(newItem);
-    model.viewState.nextItemId++;
-    model.viewState.itemName = "";
-    model.viewState.itemNumber = "";
-    updateView();
-}
-
-function revomefromlist(id) {
-    let index = -1;
-
-    for (let i = 0; i < model.data.shoppingList.length; i++) {
-        if (model.data.shoppingList[i].id === id) {
-            index = i;
+        if (model.data.items[i].id === id) {
+            model.data.items.splice(i, 1);
             break;
         }
+
     }
 
-    if (index === -1) return;
-
-    model.data.shoppingList.splice(index, 1);
-    model.viewState.selectedItemId = null;
     updateView();
 }
