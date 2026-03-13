@@ -1,35 +1,15 @@
 const model = {
 
+    app: {
+        app: document.getElementById("app"),
+
+    },
+    viewState: {
+        inputText: "",
+        items: [],
+    },
     data: {
-        users: [{ // users = name
-                id: 0,
-                userID: "Ove",
-                item: [],                
+        items: [],
 
-            },
-            {
-                id: 1,
-                userID: "Emm",
-                item: [],
-
-            },
-            {
-                id: 2,
-                userID: "Sverre",
-                item: [],
-            },
-
-            {
-                id: 4,
-                userID: "Jamal",
-                Item: [],
-            }
-        ],
-
-        viewState: {
-            choosenUserID: null,
-            inputText: "",
-        }
-
-    }
+    },
 };
